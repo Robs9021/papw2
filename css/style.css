@@ -39,6 +39,31 @@
     border-color: transparent;
 }
 
+/*Override for button success*/
+
+.btn-success {
+    color: #eeeeee;
+    background-color: #2eaf2e;
+    border-color: transparent;
+}
+
+.btn-success:hover {
+    color: #eeeeee;
+    border-color: transparent;
+}
+
+/*Override for button info*/
+
+.btn-info {
+    color: #eeeeee;
+    background-color: #33BBE2;
+    border-color: transparent;
+}
+
+.btn-info:hover {
+    color: #eeeeee;
+    border-color: transparent;
+}
 
 /*Override for navbar margin bottom*/
 .navbar {
@@ -60,5 +85,5 @@
 
 /*Margin Bottom Definition*/
 .margin_bottom {
-	margin-bottom: 5px;
+	margin-bottom: 15px;
 }

@@ -20,22 +20,88 @@
 	</nav>
 	<div class="container-fluid bg-primary masthead">
 		<img class="image-responsive center-block" src="imgs/logo.png">
-		<h2>Ámbar es la mejor solución en capacitaciones para tu empresa.</h2>
+		<h2><strong>Ámbar</strong> es la mejor solución en capacitaciones para tu empresa.</h2>
 	</div>
-	<div class="container text-center">
-		<h2>Ingresa ahora a nuestro sitio.</h2>
-		<div class="row margin_bottom">
-			<div class="col-md-4 col-md-offset-4">
-				<button class="btn btn-default btn-block"><h4>Instructores, iniciar aquí</h4></button>
+	<div class="container text-center tab-content">
+		<div id="land" class="tab-pane fade in active">
+			<h2>Ingresa ahora a nuestro sitio.</h2>
+			<div class="row margin_bottom">
+				<div class="col-md-4 col-md-offset-4">
+					<a data-toggle="tab" href="#trainer" class="btn btn-default btn-block"><h4>Instructores, iniciar aquí</h4></a>
+				</div>
+			</div>
+			<div class="row margin_bottom">
+				<div class="col-md-4 col-md-offset-4">
+					<a data-toggle="tab" href="#student" class="btn btn-default btn-block"><h4>Estudiantes, iniciar aquí</h4></a>
+				</div>
 			</div>
 		</div>
-		<div class="row margin_bottom">
-			<div class="col-md-4 col-md-offset-4">
-				<button class="btn btn-default btn-block"><h4>Estudiantes, iniciar aquí</h4></button>
+		<div id="trainer" class="tab-pane fade">
+			<h2>Inicia sesión</h2>
+			<form>
+				<div class="form-group col-md-4 col-md-offset-4">
+					<input type="email" class="form-control" placeholder="Email">					
+				</div>
+				<div class="form-group col-md-4 col-md-offset-4">
+					<input type="password" class="form-control" placeholder="Contraseña">
+				</div>
+			</form>
+			<div class="row margin_bottom">
+				<div class="col-md-2 col-md-offset-4">
+					<a data-toggle="tab" href="#land" class="btn btn-info btn-block"><h4><span class="glyphicon glyphicon-triangle-left"></span>Atrás</h4></a>
+				</div>
+				<div class="col-md-2">
+					<a data-toggle="tab" href="#" class="btn btn-success btn-block"><h4>Entrar</h4></a>
+				</div>
 			</div>
 		</div>
-		
-		
+		<div id="student" class="tab-pane fade">
+			<div class="col-md-3 col-md-offset-3">
+				<h2>Inicia sesión</h2>
+				<form>
+					<div class="form-group">
+						<input type="email" class="form-control" placeholder="Email">					
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" placeholder="Contraseña">
+					</div>
+				</form>
+				<div class="row margin_bottom">
+					<div class="col-md-12">
+						<a data-toggle="tab" href="#" class="btn btn-success btn-block"><h4>Entrar</h4></a>
+					</div>
+					
+				</div>
+				<div class="row margin_bottom">
+					<div class="col-md-12">
+						<a data-toggle="tab" href="#land" class="btn btn-info btn-block"><h4><span class="glyphicon glyphicon-triangle-left"></span>Atrás</h4></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<h2>Regístrate</h2>
+				<form>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Nombre(s)" name="name">
+					</div>
+					<div class="form-group">
+						<input type="text" class="form-control" placeholder="Apellido(s)" name="last-name">
+					</div>
+					<div class="form-group">
+						<input type="email" class="form-control" placeholder="Email" name="signup-email">
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" placeholder="Contraseña" name="signup-password">
+					</div>
+				</form>
+				<div class="row margin_bottom">
+					<div class="col-md-12">
+						<a data-toggle="tab" href="#" class="btn btn-success btn-block"><h4>Registrarse</h4></a>
+					</div>
+				</div>
+			</div>
+		</div>
+			
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
