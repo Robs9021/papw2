@@ -87,3 +87,16 @@
 .margin_bottom {
 	margin-bottom: 15px;
 }
+
+/*Titles*/
+
+.title {
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 85px;
+}
+
+/*Borders*/
+
+.border_right {
+    border-right: 1px solid #dddddd;
+}
