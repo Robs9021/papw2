@@ -1,0 +1,102 @@
+
+/*Override for logo at navbar*/
+.navbar-brand {
+    height: auto;
+    padding: 10px;
+}
+
+.navbar-brand>img {
+    height: 70px;
+}
+
+/*Override for button at navbar*/
+.navbar-btn {
+    margin-top: 20px;
+}
+
+/*Override for button default*/
+.btn-default {
+	color: #eeeeee;
+    background-color: #0040ff;
+    border-color: transparent;
+}
+
+.btn-default:hover {
+    color: #eeeeee;
+    background-color: #003ae6;
+    border-color: transparent;
+}
+
+.btn-default:active {
+    color: #eeeeee;
+    background-color: #4d79ff;
+    border-color: transparent;
+}
+
+.btn-default:focus {
+    color: #eeeeee;
+    background-color: #4d79ff;
+    border-color: transparent;
+}
+
+/*Override for button success*/
+
+.btn-success {
+    color: #eeeeee;
+    background-color: #2eaf2e;
+    border-color: transparent;
+}
+
+.btn-success:hover {
+    color: #eeeeee;
+    border-color: transparent;
+}
+
+/*Override for button info*/
+
+.btn-info {
+    color: #eeeeee;
+    background-color: #33BBE2;
+    border-color: transparent;
+}
+
+.btn-info:hover {
+    color: #eeeeee;
+    border-color: transparent;
+}
+
+/*Override for navbar margin bottom*/
+.navbar {
+	margin-bottom: 0px;
+}
+
+/*Master Head definition*/
+
+.masthead {
+	padding: 80px 0px;
+	text-align: center;
+}
+
+/*Overrride bg-primary*/
+
+.bg-primary {
+	background-color: #8600b3;
+}
+
+/*Margin Bottom Definition*/
+.margin_bottom {
+	margin-bottom: 15px;
+}
+
+/*Titles*/
+
+.title {
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 85px;
+}
+
+/*Borders*/
+
+.border_right {
+    border-right: 1px solid #dddddd;
+}
