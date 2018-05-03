@@ -13,23 +13,29 @@
 @section('content')
     <!-- Each row of the catalog must be centered -->
     <div class="row margin_bottom text-center">
-    	<div class="col-md-3 bg-secondary">
-            <img class="avatar-pic margin_top" src="{{ asset('imgs/profile-picture-placeholder.png') }}">
-    		<h2>Nombre del curso</h2>
-            <p>Descripción del curso</p>
-    		<p><a href="#"><span class="glyphicon glyphicon-plus btn-icon"></span></a></p>
+    	<div class="col-md-4 pall">
+            <div class="bg-secondary pall">
+                <img class="avatar-pic" src="{{ asset('imgs/profile-picture-placeholder.png') }}">
+        		<h2>Nombre del curso</h2>
+                <p>Descripción del curso</p>
+        		<p><a href="#"><span class="glyphicon glyphicon-plus btn-icon"></span></a></p>
+            </div>
     	</div>
-        <div class="col-md-3 col-md-offset-1 bg-secondary">
-            <img class="avatar-pic margin_top" src="{{ asset('imgs/profile-picture-placeholder.png') }}">
-            <h2>Nombre del curso</h2>
-            <p>Descripción del curso</p>
-            <p><a href="#"><span class="glyphicon glyphicon-plus btn-icon"></span></a></p>
+        <div class="col-md-4 pall">
+            <div class="bg-secondary pall">
+                <img class="avatar-pic" src="{{ asset('imgs/profile-picture-placeholder.png') }}">
+                <h2>Nombre del curso</h2>
+                <p>Descripción del curso</p>
+                <p><a href="#"><span class="glyphicon glyphicon-plus btn-icon"></span></a></p>
+            </div>
         </div>
-        <div class="col-md-3 col-md-offset-1 bg-secondary">
-            <img class="avatar-pic margin_top" src="{{ asset('imgs/profile-picture-placeholder.png') }}">
-            <h2>Nombre del curso</h2>
-            <p>Descripción del curso</p>
-            <p><a href="#"><span class="glyphicon glyphicon-plus btn-icon"></span></a></p>
+        <div class="col-md-4 pall">
+            <div class="bg-secondary pall">
+                <img class="avatar-pic" src="{{ asset('imgs/profile-picture-placeholder.png') }}">
+                <h2>Nombre del curso</h2>
+                <p>Descripción del curso</p>
+                <p><a href="#"><span class="glyphicon glyphicon-plus btn-icon"></span></a></p>
+            </div>
         </div>
     </div>
 @endsection
