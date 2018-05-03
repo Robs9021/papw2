@@ -21,6 +21,10 @@ Route::get('new', function(){
 	return view('new');
 });
 
-Route::get('blade', function () {
+Route::get('shome', function () {
     return view('student-home');
+});
+
+Route::get('scatalog', function () {
+    return view('student-course-catalog');
 });

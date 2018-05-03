@@ -7,7 +7,7 @@
     	<div class="col-md-1">
     		<img class="avatar-pic" src="{{ asset('imgs/profile-picture-placeholder.png') }}">
     	</div>
-    	<div class="col-md-2 username">
+    	<div class="col-md-2 name">
     		Alumno
     	</div>
     	<div class="col-md-8 col-md-offset-1">

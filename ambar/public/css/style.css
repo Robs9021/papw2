@@ -82,8 +82,8 @@
     padding: 80px 0px;
 }
 
-/*Secondary head username*/
-.secondary-head .username {
+/*Secondary head name*/
+.secondary-head .name {
     font-family: 'Allerta Stencil', sans-serif;
     font-size: 40px;
     color: #ffbf00;
@@ -107,6 +107,11 @@
 /*Margin Bottom Definition*/
 .margin_bottom {
 	margin-bottom: 15px;
+}
+
+/*Margin Top Definition*/
+.margin_top {
+    margin-top: 15px;
 }
 
 /*Titles*/
@@ -144,4 +149,10 @@
 
 .btn-icon {
     font-size: 45px;
+}
+
+/*Margin left*/
+
+.ml {
+    margin-left: 5px;
 }
