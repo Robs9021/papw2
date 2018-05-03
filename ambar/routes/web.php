@@ -20,3 +20,7 @@
 Route::get('new', function(){
 	return view('new');
 });
+
+Route::get('blade', function () {
+    return view('student-home');
+});

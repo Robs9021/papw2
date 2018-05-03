@@ -6,7 +6,7 @@
 }
 
 .navbar-brand>img {
-    height: 70px;
+    height: 35px;
 }
 
 /*Override for button at navbar*/
@@ -71,16 +71,37 @@
 }
 
 /*Master Head definition*/
-
+/*Title page*/
 .masthead {
 	padding: 80px 0px;
 	text-align: center;
+}
+
+/*Secondary pages*/
+.secondary-head {
+    padding: 80px 0px;
+}
+
+/*Secondary head username*/
+.secondary-head .username {
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 40px;
+    color: #ffbf00;
+}
+
+/*Links in secondary head*/
+.secondary-head a {
+    color: #ffbf00;
 }
 
 /*Overrride bg-primary*/
 
 .bg-primary {
 	background-color: #8600b3;
+}
+
+.bg-secondary {
+    background-color: #dddddd;
 }
 
 /*Margin Bottom Definition*/
@@ -95,8 +116,32 @@
     font-size: 85px;
 }
 
+.section-title h1 {
+    text-align: left;
+}
+
+/*Important Navbar*/
+
+.navbar-important {
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size: 35px;
+    color: #ffbf00;
+}
+
 /*Borders*/
 
 .border_right {
     border-right: 1px solid #dddddd;
+}
+
+/*Avatar*/
+
+.avatar-pic {
+    width: 100%;
+}
+
+/*Icon button*/
+
+.btn-icon {
+    font-size: 45px;
 }
