@@ -28,3 +28,7 @@ Route::get('shome', function () {
 Route::get('scatalog', function () {
     return view('student-course-catalog');
 });
+
+Route::get('scourse', function () {
+    return view('student-course-overview');
+});
