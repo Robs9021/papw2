@@ -40,3 +40,11 @@ Route::get('scoursemodule', function () {
 Route::get('scoursequiz', function () {
     return view('student-course-quiz');
 });
+
+Route::get('ihome', function () {
+    return view('instructor-home');
+});
+
+Route::get('iaddcourse', function () {
+    return view('instructor-add-course');
+});
