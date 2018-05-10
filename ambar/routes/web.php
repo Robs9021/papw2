@@ -32,3 +32,11 @@ Route::get('scatalog', function () {
 Route::get('scourse', function () {
     return view('student-course-overview');
 });
+
+Route::get('scoursemodule', function () {
+    return view('student-course-module');
+});
+
+Route::get('scoursequiz', function () {
+    return view('student-course-quiz');
+});
