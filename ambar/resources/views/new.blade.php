@@ -40,7 +40,7 @@
 
             <div class="container-fluid bg-primary masthead margin_bottom">
                 <img class="image-responsive center-block" src="{{ asset('imgs/logo.png') }}">
-                <h2><br><span class="title">ÁMBAR</span> <br><br> es la mejor solución en capacitaciones para tu empresa.</h2>
+                <h2><br><span class="title">ÁMBAR</span> <br><br> La mejor solución en capacitaciones para tu empresa.</h2>
             </div>
             <div class="container text-center tab-content">
                 <div id="land" class="tab-pane fade in active">
