@@ -48,3 +48,7 @@ Route::get('ihome', function () {
 Route::get('iaddcourse', function () {
     return view('instructor-add-course');
 });
+
+Route::get('declareUser', 'UserTesting@index');
+
+Route::post('store', 'UserTesting@store');
