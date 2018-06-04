@@ -35,15 +35,22 @@
             <div class="form-group">
                 <input type="password" class="form-control" placeholder="Contraseña" name="signup-password">
             </div>
-            
+            <div class="form-group">
+                <input type="file" class="form-control" name="imageFile" id="imageFile">
+            </div>
             <div class="form-group">
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
             </div>
         </form>
         <div class="row margin_bottom">
             <div class="col-md-12">
-                <a data-toggle="tab" href="#" class="btn btn-success btn-block"><h4>Registrarse</h4></a>
+                <a data-toggle="tab" href="#" class="btn btn-success btn-block" id="register"><h4>Registrarse</h4></a>
             </div>
         </div>
     </div>    
+@endsection
+
+@section('scripts')
+    @parent
+    <script src="{{ asset('js/declareUser.js') }}"></script>
 @endsection

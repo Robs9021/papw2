@@ -52,3 +52,11 @@ Route::get('iaddcourse', function () {
 Route::get('declareUser', 'UserTesting@index');
 
 Route::post('store', 'UserTesting@store');
+
+Route::post('/register', function(){
+	if(Request::ajax()){
+		return Response::json(Request::all());
+	}
+});
+
+Route::get('checkEmpresas', 'UserTesting@showE');

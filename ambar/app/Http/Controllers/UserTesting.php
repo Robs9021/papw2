@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Usuario;
+use App\Empresa;
+use Illuminate\Support\Facades\Input;
 
 class UserTesting extends Controller
 {
@@ -34,7 +37,17 @@ class UserTesting extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = new Usuario;
+        $user->name = Input::get('name');
+        $user->lastName = Input::get('lastName');
+        $user->email = Input::get('email');
+        $user->password = Input::get('password');
+        $user->image = Input::get('image');
+        //$user->save();
+        return "hello";
+        
+        
+
     }
 
     /**
@@ -46,6 +59,13 @@ class UserTesting extends Controller
     public function show($id)
     {
         //
+    }
+
+    public function showE()
+    {
+        $empresas = App\Empresa::all();
+
+        return "hello";
     }
 
     /**

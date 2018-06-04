@@ -20,8 +20,7 @@ class CreateUsuariosTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
-            $table->string('imageName');
-            $table->string('imageType');
+            $table->string('image');
             $table->integer('empresa-id')->unsigned()->index();
             $table->foreign('empresa-id')->references('id')->on('empresas')->onDelete('cascade');
             $table->integer('usuario-id')->unsigned()->index();
