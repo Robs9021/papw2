@@ -75,17 +75,17 @@ class UserTesting extends Controller
         //$empresas = App\Empresa::all();
         try 
         {
-            echo "inicio";
+            //echo "inicio";
             $empresas = 0;
-            $empresas = Empresa::all();
-            echo $empresas;
+            $empresas = Empresa::get(['id', 'name']);
+            //echo $empresas;
             //$empresas = App\Empresa::all();
             
         }
         catch(\Illuminate\Database\QueryException $e) {
           echo $e->getMessage();
         }
-        return "hello";
+        return $empresas;
     }
 
     /**

@@ -6,7 +6,18 @@ $.ajaxSetup({
 
 $(document).ready(function(){
 	$.get("checkEmpresas", function(response){
-	console.log(response);
+		response.forEach(empresa);
+	});
+
+	function empresa (item){
+		var optionEmpresa = new Option();
+		optionEmpresa.value = item.id;
+		optionEmpresa.innerHTML = item.name;
+		$('#empresas').append(optionEmpresa);
+	}
+
+	$('#empresas').change(function (){
+		//Revisar si se registra el cambio de empresa
 	});
 
 	// $.ajax({
@@ -26,6 +37,7 @@ $(document).ready(function(){
 		var user_lastname = $('input[name="last-name"]').val();
 		var user_email = $('input[name="signup-email"]').val();
 		var user_password = $('input[name="signup-password"]').val();
+		var user_company = $('#empresas').val();
 		//console.log(imageFile.files[0]);
 
 		//$('h2').after('<img src="' + imgSrc + '" alt="ejemplo">');

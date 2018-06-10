@@ -44,6 +44,11 @@ error_reporting(E_ALL);
                 <input type="file" class="form-control" name="imageFile" id="imageFile">
             </div>
             <div class="form-group">
+                <select class="form-control" id="empresas">
+                    <option value="0">Selecciona</option>                    
+                </select>
+            </div>
+            <div class="form-group">
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
             </div>
         </form>
