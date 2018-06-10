@@ -5,9 +5,20 @@ $.ajaxSetup({
 });
 
 $(document).ready(function(){
-	$.get("checkEmpresas", {}, function(response){
-		console.log(response);
+	$.get("checkEmpresas", function(response){
+	console.log(response);
 	});
+
+	// $.ajax({
+	// 		type:'GET',
+	// 		url: 'checkEmpresas',
+	// 		processData:false,
+	// 		contentType:false,
+	// 		success:function(data){
+	// 			console.log(data);
+	// 		}
+	// 	});
+
 	var imgSrc = "";
 	$('#register').click(function(){
 		var user_type = $('input[name="user-type"]').val();

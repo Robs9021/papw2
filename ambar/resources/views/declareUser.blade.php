@@ -17,6 +17,11 @@
 @endsection
 
 @section('content')
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+?>
     <div class="col-md-3">
         <h2>Cargar Usuario</h2>
         <form action="store" method="post" enctype="multipart/form-data">

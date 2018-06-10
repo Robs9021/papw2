@@ -1,11 +1,17 @@
 <?php
-
 namespace App\Http\Controllers;
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 
 use Illuminate\Http\Request;
 use App\Usuario;
 use App\Empresa;
 use Illuminate\Support\Facades\Input;
+use Exception;
+
+
 
 class UserTesting extends Controller
 {
@@ -16,6 +22,7 @@ class UserTesting extends Controller
      */
     public function index()
     {
+        
         return view("declareUser");
     }
 
@@ -58,13 +65,26 @@ class UserTesting extends Controller
      */
     public function show($id)
     {
-        //
+        //$empresas = App\Empresa::all();
+        return "fun";
     }
 
     public function showE()
     {
-        $empresas = App\Empresa::all();
-
+        
+        //$empresas = App\Empresa::all();
+        try 
+        {
+            echo "inicio";
+            $empresas = 0;
+            $empresas = Empresa::all();
+            echo $empresas;
+            //$empresas = App\Empresa::all();
+            
+        }
+        catch(\Illuminate\Database\QueryException $e) {
+          echo $e->getMessage();
+        }
         return "hello";
     }
 

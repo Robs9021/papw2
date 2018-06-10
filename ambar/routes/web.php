@@ -59,4 +59,8 @@ Route::post('/register', function(){
 	}
 });
 
-Route::get('checkEmpresas', 'UserTesting@showE');
+Route::get('/checkEmpresas', 'UserTesting@showE');
+
+Route::get('error', function(){
+    return view("errors");
+});
