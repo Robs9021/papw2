@@ -64,3 +64,5 @@ Route::get('/checkEmpresas', 'UserTesting@showE');
 Route::get('error', function(){
     return view("errors");
 });
+
+Route::post('addCompany', 'UserTesting@addCompany');

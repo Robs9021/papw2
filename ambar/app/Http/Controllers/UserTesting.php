@@ -63,48 +63,12 @@ class UserTesting extends Controller
         $user->empresa_id = Input::get('company');
         $user->usuario_id = Input::get('creator');
         $user->image = Input::get('image');
-        // $file = Input::get('image');
-        // if ($file) 
-        // {
-        //     if($request->file('image')->isValid())
-        //     {
-        //         //$file = $request->file('image');
-        //         $size = $file->getSize();
-        //         $imageFile = fopen($file, 'r');
-        //         if($imageFile)
-        //         {
-        //             $imageBlob = fread($imageFile, $size);
-        //             fclose($imageFile);
-        //         }
-        //     }
-        //     else
-        //     {
-        //         return "invalid file";
-        //     }
-        // }
-        // else
-        // {
-        //     return "no file";
-        // }
-        // $user->image = $imageBlob;
-        /*$user = new Usuario;
-        $user->name = $request->name;
-        $user->lastName = $request->lastName;
-        $user->email = $request->email;
-        $user->password = $request->password;
-        $user->type = $request->type;
-        $user->empresa_id = $request->company;
-        $user->usuario_id = $request->creator;
-        $user->image = $request->image;*/
+        
 
         try
         {
            $user->save();
-            // if(Input::has('password'))
-            // {
-            //     return  $user->password;
-            // }
-            // return "vacío";
+            
         }
         catch (\Exception $e) 
         {
@@ -137,7 +101,7 @@ class UserTesting extends Controller
         {
             //echo "inicio";
             $empresas = 0;
-            $empresas = Empresa::get(['id', 'name']);
+            $empresas = Empresa::orderBy('name', 'asc')->get(['id', 'name']);
             //echo $empresas;
             //$empresas = App\Empresa::all();
             
@@ -146,6 +110,23 @@ class UserTesting extends Controller
           echo $e->getMessage();
         }
         return $empresas;
+    }
+
+    public function addCompany(Request $request)
+    {
+        $company = new Empresa;
+        $company->name = Input::get('name');
+        try
+        {
+           $company->save();
+           return $company;            
+        }
+        catch (\Illuminate\Database\QueryException $e) 
+        {
+            //$error_code = $e->getMessage[1];
+            return $e;
+        }
+        return "Empresa agregada";
     }
 
     /**

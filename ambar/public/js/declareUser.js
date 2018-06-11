@@ -5,6 +5,7 @@ $.ajaxSetup({
 });
 
 $(document).ready(function(){
+	//LLenar el select de empresas
 	$.get("checkEmpresas", function(response){
 		response.forEach(empresa);
 	});
@@ -18,12 +19,14 @@ $(document).ready(function(){
 
 	$('#empresas').change(function (){
 		//Revisar si se registra el cambio de empresa
+		console.log($('#empresas').val());
 	});
 
+	//Registrar el usuario
 	var imgSrc = "";
 	$('#register').click(function(){
 		//Leer todos los datos
-		var user_type = $('input[name="user-type"]').val();
+		var user_type = $('input:radio[name="user-type"]:checked').val();
 		var user_name = $('input[name="name"]').val();
 		var user_lastname = $('input[name="last-name"]').val();
 		var user_email = $('input[name="signup-email"]').val();
@@ -36,7 +39,7 @@ $(document).ready(function(){
 		//Expresion regular para revisar el correo
 		var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 		//validaciones
-		if(user_type != 0 &&
+		if(user_type != undefined &&
 			user_name != "" && user_lastname != "" &&
 			user_email != "" &&
 			user_password != "" &&
@@ -83,6 +86,7 @@ $(document).ready(function(){
 		}
 		
 	});
+	//Leer la imagen
 	$('#imageFile').change(function(){
 	    var file = imageFile.files[0];
 
@@ -101,5 +105,33 @@ $(document).ready(function(){
 	    if (file) {
 	        reader.readAsDataURL(file);
 	    }
+	});
+
+	//Agregar empresa
+	$('#addCompany').click(function(){
+		var companyName = $('#company').val();
+		if(companyName != ""){
+			console.log(companyName);
+			var companyData = new FormData();
+			companyData.append('name', companyName);
+			$.ajax({
+					type:'POST',
+					url: 'addCompany',
+					data: 	companyData,
+					processData:false,
+					contentType:false,
+					success:function(response){
+						console.log(response);
+						var optionEmpresa = new Option();
+						optionEmpresa.value = response.id;
+						optionEmpresa.innerHTML = response.name;
+						optionEmpresa.selected = true;
+						$('#empresas').append(optionEmpresa);
+					}
+				});
+		}
+		else{
+			alert('Pon un nombre de empresa');
+		}
 	});
 });
