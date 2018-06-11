@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Usuario;
 use App\Empresa;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Hash;
 use Exception;
 
 
@@ -44,14 +45,73 @@ class UserTesting extends Controller
      */
     public function store(Request $request)
     {
+        //json_decode($JSONrequest, true);
         $user = new Usuario;
         $user->name = Input::get('name');
         $user->lastName = Input::get('lastName');
         $user->email = Input::get('email');
-        $user->password = Input::get('password');
+        try
+        {
+            $password = Input::get('password');
+            $user->password = Hash::make($password);
+        }
+        catch (\Exception $e) 
+        {
+            return $e;
+        }
+        $user->type = Input::get('type');
+        $user->empresa_id = Input::get('company');
+        $user->usuario_id = Input::get('creator');
         $user->image = Input::get('image');
-        //$user->save();
-        return "hello";
+        // $file = Input::get('image');
+        // if ($file) 
+        // {
+        //     if($request->file('image')->isValid())
+        //     {
+        //         //$file = $request->file('image');
+        //         $size = $file->getSize();
+        //         $imageFile = fopen($file, 'r');
+        //         if($imageFile)
+        //         {
+        //             $imageBlob = fread($imageFile, $size);
+        //             fclose($imageFile);
+        //         }
+        //     }
+        //     else
+        //     {
+        //         return "invalid file";
+        //     }
+        // }
+        // else
+        // {
+        //     return "no file";
+        // }
+        // $user->image = $imageBlob;
+        /*$user = new Usuario;
+        $user->name = $request->name;
+        $user->lastName = $request->lastName;
+        $user->email = $request->email;
+        $user->password = $request->password;
+        $user->type = $request->type;
+        $user->empresa_id = $request->company;
+        $user->usuario_id = $request->creator;
+        $user->image = $request->image;*/
+
+        try
+        {
+           $user->save();
+            // if(Input::has('password'))
+            // {
+            //     return  $user->password;
+            // }
+            // return "vacío";
+        }
+        catch (\Exception $e) 
+        {
+            //$error_code = $e->getMessage[1];
+            return $e;
+        }
+        return "OK";
         
         
 
