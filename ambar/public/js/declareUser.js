@@ -5,6 +5,17 @@ $.ajaxSetup({
 });
 
 $(document).ready(function(){
+
+	if(localStorage.getItem('userType') == 1)
+	{
+		$('img.avatar-pic').attr('src', localStorage.getItem('userImage'));
+		$('div.name').text(localStorage.getItem('username'));
+	}
+	else
+	{
+		window.location.href = 'alogin';
+	}
+
 	//LLenar el select de empresas
 	$.get("checkEmpresas", function(response){
 		response.forEach(empresa);

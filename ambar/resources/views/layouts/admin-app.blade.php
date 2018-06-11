@@ -16,37 +16,13 @@
     <body>
         <div class="flex-center position-ref full-height">
             @section('navbar')
-                 <nav class="navbar navbar-default">
+                <nav class="navbar navbar-default">
                     <div class="container">
                         <div class="navbar-header">
-                            <!-- A link to home must go here -->
-                            <a class="navbar-important" href="#">Ámbar</a>
+                            <!-- <a class="navbar-brand" href="#"><img class="image-responsive" src="imgs/logo.png"></a> -->
                         </div>
-                        <ul class="nav navbar-nav">
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Acciones <span class="glyphicon glyphicon-triangle-bottom"></span></a>
-                                <ul class="dropdown-menu">
-                                    <!-- Check if navbar has utility here -->
-                                    <li><a href="#">Agregar curso</a></li>
-                                    <li><a href="#">Editar curso</a></li>
-                                    <li><a href="#">Eliminar curso</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <!-- A search action must be included here -->
-                        <form class="navbar-form navbar-left" action="">
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Buscar">
-                                <div class="input-group-btn">
-                                    <button class="btn btn-default" type="submit">
-                                        <i class="glyphicon glyphicon-search"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
                         <div class="nav navbar-nav navbar-right">
-                            <!-- Username must go here with a link to the user profile using brand font -->
-                            <a class="navbar-important" href="#">Administrator</a>
+                            <!-- <button class="btn btn-default navbar-btn"><h4>Contáctanos</h4></button> -->
                         </div>
                     </div>
                 </nav>

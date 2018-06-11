@@ -66,3 +66,9 @@ Route::get('error', function(){
 });
 
 Route::post('addCompany', 'UserTesting@addCompany');
+
+Route::get('alogin', function () {
+    return view('administrator-login');
+});
+
+Route::post('adminLogin', 'UserTesting@login');

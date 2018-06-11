@@ -5,9 +5,9 @@
 @section('header-content')
     <div class="row margin_bottom">
     	<div class="col-md-1">
-    		<img class="avatar-pic" src="{{ asset('imgs/profile-picture-placeholder.png') }}">
+    		<img class="avatar-pic img-circle" src="{{ asset('imgs/profile-picture-placeholder.png') }}">
     	</div>
-    	<div class="col-md-2 name">
+    	<div class="col-md-11 name">
     		Administrator
     	</div>
     </div>

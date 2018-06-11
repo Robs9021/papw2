@@ -10,6 +10,7 @@ use App\Usuario;
 use App\Empresa;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Exception;
 
 
@@ -79,6 +80,54 @@ class UserTesting extends Controller
         
         
 
+    }
+
+    public function login(Request $request)
+    {
+        try 
+        {
+            if($request->has('email'))
+            {
+                $email = Input::get('email');
+            }
+            else
+            {
+                return "Problema con el email";
+            }
+            if($request->has('password'))
+            {
+                $password = Input::get('password');
+            }
+            else
+            {
+                return "Problema con el password";
+            }
+            $user = Usuario::where('email', $email)
+                            ->where('type', 1)
+                            ->get(['id', 'password']);
+
+            
+            
+            $id = $user[0]->id;
+
+            if(Hash::check($password, $user[0]->password))
+            {
+                $user = Usuario::where('id', $id)
+                                ->get(['id', 'name', 'image', 'empresa_id']);
+            }
+            else
+            {
+                return "usuario o password incorrectos";
+            }
+            
+
+        }
+        catch(\Exception $e)
+        {
+            echo $e->getMessage();
+            return " Terminó con error";
+        }
+        return $user;
     }
 
     /**
