@@ -10,7 +10,6 @@ use App\Usuario;
 use App\Empresa;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Str;
 use Exception;
 

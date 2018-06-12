@@ -192,7 +192,7 @@ $(document).ready(function(){
 						console.log(response);
 					}
 					else {
-						//window.location.href = "asearch";
+						window.location.href = "asearch";
 					}
 				}
 			});

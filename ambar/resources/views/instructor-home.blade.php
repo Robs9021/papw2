@@ -4,8 +4,8 @@
 
 @section('header-content')
     <div class="row margin_bottom">
-    	<div class="col-md-1">
-    		<img class="avatar-pic" src="{{ asset('imgs/profile-picture-placeholder.png') }}">
+    	<div class="col-md-1 text-center">
+    		<img class="avatar-pic img-circle" id="avatar" src="{{ asset('imgs/profile-picture-placeholder.png') }}">
     	</div>
     	<div class="col-md-11 name">
     		Instructor
@@ -44,7 +44,12 @@
         </div>
     	<div class="col-md-4 bg-secondary">
     		<h2>Agrega un curso</h2>
-    		<p><a href="#"><span class="glyphicon glyphicon-plus btn-icon"></span></a></p>
+    		<p><a href="#" class="addCourse"><span class="glyphicon glyphicon-plus btn-icon"></span></a></p>
     	</div>
     </div>
+@endsection
+
+@section('scripts')
+    @parent
+    <script src="{{ asset('js/ihome.js') }}"></script>
 @endsection

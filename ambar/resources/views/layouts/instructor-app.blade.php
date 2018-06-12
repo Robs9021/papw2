@@ -27,12 +27,15 @@
                                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">Acciones <span class="glyphicon glyphicon-triangle-bottom"></span></a>
                                 <ul class="dropdown-menu">
                                     <!-- If user has no courses, just show a link to cousrses catalog -->
-                                    <li><a href="#">Agregar curso</a></li>
+                                    <li><a href="#" class="addCourse">Agregar curso</a></li>
                                     <li><a href="#">Editar curso</a></li>
                                     <li><a href="#">Eliminar curso</a></li>
                                 </ul>
                             </li>
                         </ul>
+                        <div class="nav navbar-nav navbar-right text-center">
+                            <button class="btn btn-default navbar-btn hidden" id="logout"><h4>Cerrar Sesión <i class="glyphicon glyphicon-log-out"></i></h4></button>
+                        </div>
                         <!-- A search action must be included here -->
                         <form class="navbar-form navbar-left" action="">
                             <div class="input-group">
@@ -44,10 +47,6 @@
                                 </div>
                             </div>
                         </form>
-                        <div class="nav navbar-nav navbar-right">
-                            <!-- Username must go here with a link to the user profile using brand font -->
-                            <a class="navbar-important" href="#">Instructor</a>
-                        </div>
                     </div>
                 </nav>
             @show

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>Ambar</title>
 
         <!-- Fonts -->
@@ -60,10 +60,13 @@
                     <h2>Inicia sesión</h2>
                     <form>
                         <div class="form-group col-md-4 col-md-offset-4">
-                            <input type="email" class="form-control" placeholder="Email">                   
+                            <input type="email" class="form-control" placeholder="Email" name="iemail">                   
                         </div>
                         <div class="form-group col-md-4 col-md-offset-4">
-                            <input type="password" class="form-control" placeholder="Contraseña">
+                            <input type="password" class="form-control" placeholder="Contraseña" name="ipassword">
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" name="_token" value="{{csrf_token()}}">
                         </div>
                     </form>
                     <div class="row margin_bottom">
@@ -71,7 +74,7 @@
                             <a data-toggle="tab" href="#land" class="btn btn-info btn-block"><h4><span class="glyphicon glyphicon-triangle-left"></span>Atrás</h4></a>
                         </div>
                         <div class="col-md-2">
-                            <a data-toggle="tab" href="#" class="btn btn-success btn-block"><h4>Entrar</h4></a>
+                            <a data-toggle="tab" href="#" class="btn btn-success btn-block" id="ilogin"><h4>Entrar</h4></a>
                         </div>
                     </div>
                 </div>
@@ -125,6 +128,7 @@
             </div>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('js/ilogin.js') }}"></script>
         </div>
     </body>
 </html>

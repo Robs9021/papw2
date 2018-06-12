@@ -1,6 +1,7 @@
 <?php
 
 use Faker\Generator as Faker;
+use Illuminate\Support\Facades\Hash;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +36,7 @@ $factory->define(App\Usuario::class, function (Faker $faker) {
         'name' => $faker->firstName,
         'lastName' => $faker->lastName,
         'email' => $faker->unique()->freeEmail,
-        'password' => $faker->password,
+        'password' => Hash::make('123'),
         'image' => $faker->imageUrl,
         'type' => $faker->numberBetween($min = 2, $max = 3),
         'empresa_id' => $faker->numberBetween($min = 2, $max = 11),

@@ -44,6 +44,7 @@ function searchAnother(searchText, count) {
 }
 
 $(document).ready(function(){
+	//Si la sesión iniciada
 	if(localStorage.getItem('userType') == 1)
 	{
 		$('img#avatar').attr('src', localStorage.getItem('userImage'));

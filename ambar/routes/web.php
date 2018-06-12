@@ -41,6 +41,8 @@ Route::get('scoursequiz', function () {
     return view('student-course-quiz');
 });
 
+//Rutas del instructor
+
 Route::get('ihome', function () {
     return view('instructor-home');
 });
@@ -48,6 +50,10 @@ Route::get('ihome', function () {
 Route::get('iaddcourse', function () {
     return view('instructor-add-course');
 });
+
+Route::post('iLogin', 'InstructorController@login');
+
+//Rutas del Admin
 
 Route::get('declareUser', 'UserTesting@index');
 

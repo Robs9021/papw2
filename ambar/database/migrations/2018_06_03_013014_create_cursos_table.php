@@ -18,14 +18,14 @@ class CreateCursosTable extends Migration
             $table->string('title');
             $table->string('description');
             $table->string('skills');
-            $table->string('imageName');
-            $table->string('imageType');
+            $table->string('image');
             $table->float('score');
             $table->integer('empresa-id')->unsigned()->index();
             $table->foreign('empresa-id')->references('id')->on('empresas')->onDelete('cascade');
             $table->integer('usuario-id')->unsigned()->index();
             $table->foreign('usuario-id')->references('id')->on('usuarios')->onDelete('cascade');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
