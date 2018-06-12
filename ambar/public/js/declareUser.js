@@ -166,4 +166,9 @@ $(document).ready(function(){
 			alert('Pon un nombre de empresa');
 		}
 	});
+	//Editar datos del admin
+	$('#avatar').click(function(){
+		sessionStorage.searchId = localStorage.userId;
+		window.location.href = 'aedit';
+	});
 });

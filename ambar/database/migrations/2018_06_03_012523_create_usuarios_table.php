@@ -27,6 +27,7 @@ class CreateUsuariosTable extends Migration
             $table->integer('usuario_id')->unsigned()->index();
             $table->foreign('usuario_id')->references('id')->on('usuarios');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

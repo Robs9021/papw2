@@ -83,4 +83,9 @@ $(document).ready(function(){
 		window.location.href = 'aedit';
 		//console.log($(this).attr('userid'));
 	});
+
+	$('#avatar').click(function(){
+		sessionStorage.searchId = localStorage.userId;
+		window.location.href = 'aedit';
+	});
 });

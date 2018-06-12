@@ -39,12 +39,20 @@ $(document).ready(function(){
 					processData: false,
 					contentType: false,
 					success:function(response){
-						localStorage.setItem('userId', response[0].id);
-						localStorage.setItem('username', response[0].name);
-						localStorage.setItem('userImage', response[0].image);
-						localStorage.setItem('userCompany', response[0].empresa_id);
-						localStorage.setItem('userType', 1);
-
+						if(response === "usuario o password incorrectos"){
+							console.log(response);
+							console.log("ERROR");
+						}
+						else 
+						{
+							localStorage.setItem('userId', response[0].id);
+							localStorage.setItem('username', response[0].name);
+							localStorage.setItem('userImage', response[0].image);
+							localStorage.setItem('userCompany', response[0].empresa_id);
+							localStorage.setItem('userType', 1);
+							console.log(response);
+						}
+						
 						window.location.href = 'declareUser';
 					}
 				});

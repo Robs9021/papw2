@@ -10,6 +10,7 @@ use App\Usuario;
 use App\Empresa;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Str;
 use Exception;
 
@@ -102,12 +103,21 @@ class UserTesting extends Controller
             {
                 return "Problema con el password";
             }
+
+
+            // $encrypted = Crypt::encryptString($password);
+
+            // $user = Usuario::where('email', $email)
+            //                  ->where('type', 1)
+            //                  ->where('password', $encrypted)
+            //                  ->get(['id', 'name', 'image', 'empresa_id']);
+
             $user = Usuario::where('email', $email)
                             ->where('type', 1)
                             ->get(['id', 'password']);
 
             
-            
+            //return $user;
             $id = $user[0]->id;
 
             if(Hash::check($password, $user[0]->password))
@@ -136,17 +146,11 @@ class UserTesting extends Controller
         {
             if($request->has('searchText'))
             {
-                //return $request;
+                
                 $searchText = Input::get('searchText');
                 $id = Input::get('lastId');
-                //echo $id;
-                //return $id;
-                // $users = Usuario::where('name', 'LIKE', '%' . $searchText . '%')
-                //                 ->orWhere('lastName', 'LIKE', '%' . $searchText . '%')
-                //                 ->orWhere('email', 'LIKE', '%' . $searchText . '%')
-                //                 ->with('empresa:id,name')
-                //                 ->get(['id', 'name', 'lastName', 'image']);
-                $users = Usuario::rightJoin('empresas', 'empresas.id', '=', 'usuarios.id')
+                
+                $users = Usuario::rightJoin('empresas', 'empresas.id', '=', 'usuarios.empresa_id')
                                 ->where(function($q) use ($searchText)
                                 {
                                     $q->where('usuarios.name', 'LIKE', '%' . $searchText . '%')
@@ -157,6 +161,7 @@ class UserTesting extends Controller
                                 ->where('usuarios.id', '>', $id)
                                 ->get(['usuarios.id', 'usuarios.name', 'usuarios.lastName', 'usuarios.image', 'empresas.companyName'])
                                 ->first();
+                            /*    $users = Usuario::rightJoin('empresas', 'empresas.id', '=', 'usuarios.empresa_id')->where(function($q) use ($searchText){$q->where('usuarios.name', 'LIKE', '%' . $searchText . '%')->orWhere('usuarios.lastName', 'LIKE', '%' . $searchText . '%')->orWhere('usuarios.email', 'LIKE', '%' . $searchText . '%')->orWhere('empresas.companyName', 'LIKE', '%' . $searchText . '%');})->where('usuarios.id', '>', $id)->get(['usuarios.id', 'usuarios.name', 'usuarios.lastName', 'usuarios.image', 'empresas.companyName'])->first();      */
                 return $users;
             }
             else
@@ -266,7 +271,52 @@ class UserTesting extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        try
+        {
+            $user = Usuario::where('id', '=', $id)
+                            ->get();
+            //return $user;
+            $user[0]->name = Input::get('name');
+            $user[0]->lastName = Input::get('lastName');
+            $user[0]->email = Input::get('email');
+            $password = Input::get('password');
+            //return $password;
+            $user[0]->password = Hash::make($password);
+            $user[0]->type = Input::get('type');
+            $user[0]->empresa_id = Input::get('company');
+            $user[0]->image = Input::get('image');
+            $user[0]->save();
+            return $user;
+        }
+        catch(\Exception $e)
+        {
+            echo $e->getMessage();
+            return " Termina Error";
+        }
+
+
+        
+        return "Final";
+    }
+
+    public function massUpdate(Request $request)
+    {
+        try
+        {
+            //return "Entra";
+            $password = Input::get('password');
+            $hash = Hash::make($password);
+            //return "Lee y hashea";
+            Usuario::where('usuario_id', 1)
+              ->update(['password' => $hash]); 
+            //echo $update;
+            return " hace el query";
+        }
+        catch(\Exception $e)
+        {
+            echo $e->getMessage();
+            return " Termina Error";
+        }
     }
 
     /**
@@ -277,6 +327,17 @@ class UserTesting extends Controller
      */
     public function destroy($id)
     {
-        //
+        //return $id;
+        try
+        {
+            $user = Usuario::where('id', $id)->get();
+            $user[0]->delete();  
+        }
+        catch(\Exception $e)
+        {
+            echo $e->getMessage();
+            return " Termina Error";
+        }
+        return "eliminado";
     }
 }

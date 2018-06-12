@@ -48,7 +48,7 @@ error_reporting(E_ALL);
                 <input type="email" class="form-control" placeholder="Email" name="email">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" placeholder="Contraseña" name="signup-password">
+                <input type="password" class="form-control" placeholder="Contraseña" name="password">
             </div>
             <div class="form-group">
                 <input type="file" class="form-control" name="imageFile" id="imageFile">

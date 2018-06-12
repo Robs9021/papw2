@@ -84,3 +84,13 @@ Route::get('aedit', function(){
 });
 
 Route::post('searchUserById', 'UserTesting@searchUserById');
+
+Route::post('update/{id}', 'UserTesting@update');
+
+Route::post('massUpdateProc', 'UserTesting@massUpdate');
+
+Route::get('massUpdate', function(){
+    return view('massUpdate');
+});
+
+Route::post('deleteUser/{id}', 'UserTesting@destroy');
