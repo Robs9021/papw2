@@ -172,6 +172,32 @@ class UserTesting extends Controller
         return 'ok';
     }
 
+    public function searchUserById(Request $request)
+    {
+        //return "hola";
+        try
+        {
+            if($request->has('searchById'))
+            {
+                $id = Input::get('searchById');
+                //return "adios";
+                $user = Usuario::where('id', '=', $id)
+                                ->get(['id', 'type', 'name', 'lastName', 'email', 'image', 'empresa_id']);
+                return $user;
+            }
+            else
+            {
+                return "No hubo busqueda";
+            }
+        }
+        catch(\Exception $e)
+        {
+            echo $e->getMessage();
+            return "termino con error";
+        }
+        return "OK";
+    }
+
     /**
      * Display the specified resource.
      *

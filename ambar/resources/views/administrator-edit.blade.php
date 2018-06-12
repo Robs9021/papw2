@@ -21,6 +21,9 @@ error_reporting(E_ALL);
 ?>
     <div class="col-md-6 col-md-offset-3">
         <h2>Editar Usuario</h2>
+        <div class="col-md-12 text-center">
+            <img class="avatar-pic img-circle" id="editAvatar" src="{{ asset('imgs/profile-picture-placeholder.png') }}">
+        </div>
         <form action="edit" method="post" enctype="multipart/form-data">
             <div class="form-group text-left">
                 <label for="user-type">Administrador</label>
@@ -42,7 +45,7 @@ error_reporting(E_ALL);
                 <input type="text" class="form-control" placeholder="Apellido(s)" name="last-name">
             </div>
             <div class="form-group">
-                <input type="email" class="form-control" placeholder="Email" name="signup-email">
+                <input type="email" class="form-control" placeholder="Email" name="email">
             </div>
             <div class="form-group">
                 <input type="password" class="form-control" placeholder="Contraseña" name="signup-password">

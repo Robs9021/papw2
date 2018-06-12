@@ -15,12 +15,19 @@ function searchUserById(id) {
 		contentType:false,
 		success:function(response) {
 			if(response != "") {
-				if(sessionStorage.searchId == response.id) {
+				if(sessionStorage.searchId == response[0].id) {
 					console.log(response);
-					
+					$('input:radio[value="'+ response[0].type +'"]').attr('checked', true);
+					$('input[name="name"]').val(response[0].name);
+					$('input[name="last-name"]').val(response[0].lastName);
+					$('input[name="email"]').val(response[0].email);
+					$('#editAvatar').attr('src', response[0].image);
+					//$('option[value="'+ response[0].empresa_id +'"]').attr('selected', true);
+					$('#empresas').val(response[0].empresa_id);
 				}
 				else {
-					window.location.href = "declareUser";
+					//window.location.href = "declareUser";
+					console.log('hubo error' + response[0].id);
 				}
 			}
 			else {
@@ -48,13 +55,14 @@ $(document).ready(function(){
 		localStorage.clear();
 		window.location.href = 'alogin';
 	});
-	//Buscar usuario por ID
-	if(sessionStorage.searchId != "" && sessionStorage.searchId != undefined) {
-		searchUserById(sessionStorage.searchId);
-	}
+	
 	//LLenar el select de empresas
 	$.get("checkEmpresas", function(response){
 		response.forEach(empresa);
+		//Buscar usuario por ID
+		if(sessionStorage.searchId != "" && sessionStorage.searchId != undefined) {
+			searchUserById(sessionStorage.searchId);
+		}
 	});
 
 	function empresa (item){

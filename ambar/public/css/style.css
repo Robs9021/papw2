@@ -206,6 +206,10 @@
     margin-top: 15px;
 }
 
+#editAvatar {
+    width: 50%;
+}
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
