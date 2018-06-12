@@ -79,6 +79,8 @@ $(document).ready(function(){
 	$('body').on('click','.edit', function(event){
 		event.preventDefault();
 		//console.log("click");
-		console.log($(this).attr('userid'));
+		sessionStorage.searchId = $(this).attr('userid');
+		window.location.href = 'aedit';
+		//console.log($(this).attr('userid'));
 	});
 });

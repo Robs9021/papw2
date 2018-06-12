@@ -1,11 +1,11 @@
 @extends('layouts.admin-app')
 
-@section('title', 'Alta')
+@section('title', 'Edita')
 
 @section('header-content')
     <div class="row margin_bottom">
     	<div class="col-md-1 text-center">
-    		<img class="avatar-pic img-circle" src="{{ asset('imgs/profile-picture-placeholder.png') }}">
+    		<img class="avatar-pic img-circle" id="avatar" src="{{ asset('imgs/profile-picture-placeholder.png') }}">
     	</div>
     	<div class="col-md-11 name">
     		Administrator
@@ -20,8 +20,8 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 ?>
     <div class="col-md-6 col-md-offset-3">
-        <h2>Cargar Usuario</h2>
-        <form action="store" method="post" enctype="multipart/form-data">
+        <h2>Editar Usuario</h2>
+        <form action="edit" method="post" enctype="multipart/form-data">
             <div class="form-group text-left">
                 <label for="user-type">Administrador</label>
                 <input type="radio" name="user-type" value="1">
@@ -57,7 +57,6 @@ error_reporting(E_ALL);
                 </select>
             </div>
             
-            
             <div class="input-group">
                 <input type="text" class="form-control" placeholder="Agregar empresa" id="company">
                 <span class="input-group-btn">
@@ -70,8 +69,11 @@ error_reporting(E_ALL);
             </div>
         </form>
         <div class="row margin_bottom">
-            <div class="col-md-12">
-                <a data-toggle="tab" href="#" class="btn btn-success btn-block" id="register"><h4>Registrarse</h4></a>
+            <div class="col-md-6">
+                <a href="#" class="btn btn-danger btn-block" id="delete"><h4>Borrar usuario</h4></a>
+            </div>
+            <div class="col-md-6">
+                <a href="#" class="btn btn-success btn-block" id="edit"><h4>Guardar</h4></a>
             </div>
         </div>
     </div>    
@@ -79,5 +81,5 @@ error_reporting(E_ALL);
 
 @section('scripts')
     @parent
-    <script src="{{ asset('js/declareUser.js') }}"></script>
+    <script src="{{ asset('js/aedit.js') }}"></script>
 @endsection

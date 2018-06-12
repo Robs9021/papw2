@@ -45,7 +45,7 @@ $(document).ready(function(){
 	function empresa (item){
 		var optionEmpresa = new Option();
 		optionEmpresa.value = item.id;
-		optionEmpresa.innerHTML = item.name;
+		optionEmpresa.innerHTML = item.companyName;
 		$('#empresas').append(optionEmpresa);
 	}
 

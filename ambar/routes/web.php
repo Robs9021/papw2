@@ -78,3 +78,7 @@ Route::get('asearch', function(){
 });
 
 Route::post('searchUser', 'UserTesting@searchUser');
+
+Route::get('aedit', function(){
+    return view('administrator-edit');
+});
