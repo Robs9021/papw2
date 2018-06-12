@@ -130,6 +130,48 @@ class UserTesting extends Controller
         return $user;
     }
 
+    public function searchUser(Request $request)
+    {
+        try
+        {
+            if($request->has('searchText'))
+            {
+                //return $request;
+                $searchText = Input::get('searchText');
+                $id = Input::get('lastId');
+                //echo $id;
+                //return $id;
+                // $users = Usuario::where('name', 'LIKE', '%' . $searchText . '%')
+                //                 ->orWhere('lastName', 'LIKE', '%' . $searchText . '%')
+                //                 ->orWhere('email', 'LIKE', '%' . $searchText . '%')
+                //                 ->with('empresa:id,name')
+                //                 ->get(['id', 'name', 'lastName', 'image']);
+                $users = Usuario::rightJoin('empresas', 'empresas.id', '=', 'usuarios.id')
+                                ->where(function($q) use ($searchText)
+                                {
+                                    $q->where('usuarios.name', 'LIKE', '%' . $searchText . '%')
+                                    ->orWhere('usuarios.lastName', 'LIKE', '%' . $searchText . '%')
+                                    ->orWhere('usuarios.email', 'LIKE', '%' . $searchText . '%')
+                                    ->orWhere('empresas.companyName', 'LIKE', '%' . $searchText . '%');
+                                })
+                                ->where('usuarios.id', '>', $id)
+                                ->get(['usuarios.id', 'usuarios.name', 'usuarios.lastName', 'usuarios.image', 'empresas.companyName'])
+                                ->first();
+                return $users;
+            }
+            else
+            {
+                return "No hubo busqueda";
+            }
+        }
+        catch(\Exception $e)
+        {
+            echo $e->getMessage();
+            return "termino con error";
+        }
+        return 'ok';
+    }
+
     /**
      * Display the specified resource.
      *
@@ -150,7 +192,7 @@ class UserTesting extends Controller
         {
             //echo "inicio";
             $empresas = 0;
-            $empresas = Empresa::orderBy('name', 'asc')->get(['id', 'name']);
+            $empresas = Empresa::orderBy('companyName', 'asc')->get(['id', 'companyName']);
             //echo $empresas;
             //$empresas = App\Empresa::all();
             
@@ -164,7 +206,7 @@ class UserTesting extends Controller
     public function addCompany(Request $request)
     {
         $company = new Empresa;
-        $company->name = Input::get('name');
+        $company->companyName = Input::get('name');
         try
         {
            $company->save();

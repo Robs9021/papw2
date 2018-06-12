@@ -11,7 +11,7 @@ class UsuariosTableSeeder extends Seeder
      */
     public function run()
     {
-        App\Empresa::create(['name' => 'Jose Roberto',
+        App\Usuario::create(['name' => 'Jose Roberto',
         	'lastName' => 'Esparza Sibilla',
         	'email' => 'roberto.esparza90@gmail.com',
         	'password' => '$2y$10$XqKgzNNWU7L1OD9PjJpwbOVywBQfNpoD7hELnrbWUGV0Q4R0wmAbC',
@@ -28,6 +28,6 @@ class UsuariosTableSeeder extends Seeder
   //       	'type' => '2',
   //       	'empresa_id' => '2',
   //       	'usuario_id' => '1']);
-        //factory(App\Usuario::class, 15)->create();
+        factory(App\Usuario::class, 20)->create();
     }
 }

@@ -6,15 +6,36 @@ $.ajaxSetup({
 
 $(document).ready(function(){
 
+	//Cambio de tamaño
+	// $(window).on('resize', function(){
+	// 	if ($(window).width() <= 400) { 
+	// 	    $('div.navbar-header a.navbar-brand').removeClass('navbar-brand');
+	// 	    $('div.navbar-header a img').addClass('logo');
+	// 	}
+	// 	if ($(window).width() >= 400) { 
+	// 	    $('div.navbar-header a').addClass('navbar-brand');
+	// 	    $('div.navbar-header a img').removeClass('logo');
+	// 	}
+	// });
+	
+
+	//Si hay sesión iniciada
 	if(localStorage.getItem('userType') == 1)
 	{
 		$('img.avatar-pic').attr('src', localStorage.getItem('userImage'));
 		$('div.name').text(localStorage.getItem('username'));
+		$('#logout').removeClass('hidden');
+		$('#menu').removeClass('hidden');
 	}
 	else
 	{
 		window.location.href = 'alogin';
 	}
+	//Cerrar sesión
+	$('#logout').click(function(){
+		localStorage.clear();
+		window.location.href = 'alogin';
+	});
 
 	//LLenar el select de empresas
 	$.get("checkEmpresas", function(response){
@@ -139,7 +160,7 @@ $(document).ready(function(){
 						optionEmpresa.selected = true;
 						$('#empresas').append(optionEmpresa);
 					}
-				});
+			});
 		}
 		else{
 			alert('Pon un nombre de empresa');

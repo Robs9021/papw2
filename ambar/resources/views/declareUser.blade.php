@@ -4,7 +4,7 @@
 
 @section('header-content')
     <div class="row margin_bottom">
-    	<div class="col-md-1">
+    	<div class="col-md-1 text-center">
     		<img class="avatar-pic img-circle" src="{{ asset('imgs/profile-picture-placeholder.png') }}">
     	</div>
     	<div class="col-md-11 name">

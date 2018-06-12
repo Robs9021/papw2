@@ -22,8 +22,23 @@ use Faker\Generator as Faker;
 //     ];
 // });
 
+
+
 $factory->define(App\Empresa::class, function (Faker $faker) {
     return [
-        'name' => $faker->company
+        'companyName' => $faker->company
+    ];
+});
+
+$factory->define(App\Usuario::class, function (Faker $faker) {
+    return [
+        'name' => $faker->firstName,
+        'lastName' => $faker->lastName,
+        'email' => $faker->unique()->freeEmail,
+        'password' => $faker->password,
+        'image' => $faker->imageUrl,
+        'type' => $faker->numberBetween($min = 2, $max = 3),
+        'empresa_id' => $faker->numberBetween($min = 2, $max = 11),
+        'usuario_id' => 1
     ];
 });

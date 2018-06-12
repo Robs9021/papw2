@@ -19,10 +19,19 @@
                 <nav class="navbar navbar-default">
                     <div class="container">
                         <div class="navbar-header">
-                            <!-- <a class="navbar-brand" href="#"><img class="image-responsive" src="imgs/logo.png"></a> -->
+                            <a class="navbar-important" href="#">Ámbar</a>
                         </div>
-                        <div class="nav navbar-nav navbar-right">
-                            <!-- <button class="btn btn-default navbar-btn"><h4>Contáctanos</h4></button> -->
+                        <ul class="nav navbar-nav hidden" id="menu">
+                            <li class="dropdown">
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Acciones <span class="glyphicon glyphicon-triangle-bottom"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="declareUser">Agregar usuario</a></li>
+                                    <li><a href="asearch">Buscar usuarios</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="nav navbar-nav navbar-right text-center">
+                            <button class="btn btn-default navbar-btn hidden" id="logout"><h4>Cerrar Sesión <i class="glyphicon glyphicon-log-out"></i></h4></button>
                         </div>
                     </div>
                 </nav>

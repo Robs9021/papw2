@@ -6,12 +6,12 @@
 }
 
 .navbar-brand>img {
-    height: 35px;
+    height: 60px;
 }
 
 /*Override for button at navbar*/
 .navbar-btn {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 /*Override for button default*/
@@ -163,6 +163,10 @@
     padding: 10px;
 }
 
+.results {
+    margin: 30px 0;
+}
+
 /*Descriptive Paragraph*/
 
 .dp {
@@ -198,7 +202,43 @@
     margin-left: 200px; /* Same as the width of the sidenav */
 }
 
+.navbar-header, #menu {
+    margin-top: 15px;
+}
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
+}
+
+@media screen and (max-width: 400px) {
+    .secondary-head .name {
+        font-family: 'Allerta Stencil', sans-serif;
+        font-size: 40px;
+        color: #ffbf00;
+        text-align: center;
+    }
+
+    .avatar-pic, .logo {
+        width: 50%;
+    }
+
+    .navbar-header {
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    #menu, .dropdown-menu {
+        text-align: center;
+    }
+
+    /*.navbar-brand {
+        padding: 0;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .navbar-brand>img {
+        height: 150px;
+    }*/
 }

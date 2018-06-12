@@ -11,7 +11,7 @@ class EmpresasTableSeeder extends Seeder
      */
     public function run()
     {
-        App\Empresa::create(['name' => 'Ambar']);
+        App\Empresa::create(['companyName' => 'Ambar']);
         factory(App\Empresa::class, 10)->create();
     }
 }

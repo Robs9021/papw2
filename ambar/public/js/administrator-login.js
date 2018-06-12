@@ -5,6 +5,19 @@ $.ajaxSetup({
 });
 
 $(document).ready(function(){
+
+	//Cambio de tamaño
+	// $(window).on('resize', function(){
+	// 	if ($(window).width() <= 400) { 
+	// 	    $('div.navbar-header a.navbar-brand').removeClass('navbar-brand');
+	// 	    $('div.navbar-header a img').addClass('logo');
+	// 	}
+	// 	if ($(window).width() >= 400) { 
+	// 	    $('div.navbar-header a').addClass('navbar-brand');
+	// 	    $('div.navbar-header a img').removeClass('logo');
+	// 	}
+	// });
+
 	$('#login').click(function(){
 		//Leer datos
 		var email = $('input[name="login-email"]').val();

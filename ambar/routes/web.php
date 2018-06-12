@@ -72,3 +72,9 @@ Route::get('alogin', function () {
 });
 
 Route::post('adminLogin', 'UserTesting@login');
+
+Route::get('asearch', function(){
+    return view('administrator-search');
+});
+
+Route::post('searchUser', 'UserTesting@searchUser');
